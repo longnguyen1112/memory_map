@@ -1,0 +1,31 @@
+﻿  Source.c
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(134,20): warning C4101: 'num_of_Ritem': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(134,6): warning C4101: 'num_of_Litem': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(220,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(237,32): warning C4047: '=': 'HANDLE' differs in levels of indirection from 'int'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(241,90): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(249,35): warning C4244: '=': conversion from 'LONGLONG' to 'int', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(250,83): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(252,90): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(279,79): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(280,80): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(281,81): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(297,26): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'HANDLE'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(297,26): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 3 has type 'HANDLE'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(330,25): warning C4047: '=': 'HANDLE' differs in levels of indirection from 'int'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(331,27): warning C4047: '=': 'HANDLE' differs in levels of indirection from 'int'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(332,80): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(333,81): warning C4244: 'function': conversion from 'LONGLONG' to 'SIZE_T', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(342,26): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'HANDLE'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(342,26): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 3 has type 'HANDLE'
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(283,1): warning C4244: 'initializing': conversion from 'LONGLONG' to 'int', possible loss of data
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(214,6): warning C4101: 'numCPUMax': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(205,12): warning C4101: 'OutFile': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(207,22): warning C4101: 'hOutTempFile': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(204,12): warning C4101: 'InFile': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(202,10): warning C4101: 'hOutFiles': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(187,9): warning C4101: 'data': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(190,13): warning C4101: 'Bout': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(207,9): warning C4101: 'hInTempFile': unreferenced local variable
+C:\Users\long.nguyen\Desktop\FileInsertionSort\FileInsertionSort\Source.c(190,8): warning C4101: 'BIn': unreferenced local variable
+  FileInsertionSort.vcxproj -> C:\Users\long.nguyen\Desktop\FileInsertionSort\Debug\FileInsertionSort.exe
