@@ -134,7 +134,7 @@ void mergeTwoFiles(RECORD from[], RECORD to[],int start, int firstStop, int end)
 	int num_of_Litem, num_of_Ritem;
 	int l = start;
 	int r = firstStop;
-	int outputIndex = 0;
+	int outputIndex = start;
 	while (l < firstStop && r < end)
 	{
 		int recIdx = 0;
@@ -234,8 +234,8 @@ int _tmain(int argc, LPTSTR argv[])
 		int size;
 		if (argc == 6)
 		{
-			hDestination = atoi(argv[3]);
-			//hSource = atoi(argv[2]);
+			hDestination = atoi(argv[2]);
+			hSource = atoi(argv[3]);
 			offset = atoi(argv[4]);
 			size = atoi(argv[5]);
  			RECORD* destMap = MapViewOfFile(hDestination, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
@@ -278,7 +278,7 @@ int _tmain(int argc, LPTSTR argv[])
 			hIn = CreateFileMapping(STDInput, &stdOutSA, PAGE_READONLY, 0, 0, NULL);
 			RECORD* pInFile = MapViewOfFile(hIn, FILE_MAP_READ, 0, 0, FileSize.QuadPart);
 			RECORD* pDest = MapViewOfFile(hDest, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
-			RECORD* pSource = MapViewOfFile(hOut, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
+			RECORD* pSource = MapViewOfFile(hSource, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
 			int low = 0;
 			int high = (FileSize.QuadPart) / 64;
 			int mid = (low + high) / 2;
@@ -294,7 +294,7 @@ int _tmain(int argc, LPTSTR argv[])
 			int tempMid = mid;
 			for (int i = 0; i < 2; i++)
 			{
-				sprintf(commandLine, _T("FileInsertionSort %d %d %d %d %d"), processes, hDest, hSource, tempLow, tempMid);
+				sprintf(commandLine, _T("FileInsertionSort %d %d %d %d %d"), processes, hSource, hDest, tempLow, tempMid);
 				if (!CreateProcess(NULL, commandLine, NULL, NULL,
 					TRUE, 0, NULL, NULL, &startUpSearch, &processInfo))
 					printf("ProcCreate failed.");
@@ -311,7 +311,7 @@ int _tmain(int argc, LPTSTR argv[])
 			mergeTwoFiles(pSource, pDest, low, mid, high);
 			UnmapViewOfFile(pDest);
 			UnmapViewOfFile(pSource);
-			CloseHandle(hOut);
+			CloseHandle(hSource);
 			CloseHandle(fOut);
 			CloseHandle(hDest);
 			free(hProc);
@@ -330,7 +330,7 @@ int _tmain(int argc, LPTSTR argv[])
 			hDest = atoi(argv[3]);
 			hSource = atoi(argv[2]);
 			RECORD* pDest = MapViewOfFile(hDest, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
-			RECORD* pSource = MapViewOfFile(hOut, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
+			RECORD* pSource = MapViewOfFile(hSource, FILE_MAP_WRITE, 0, 0, FileSize.QuadPart);
 			int low = atoi(argv[4]);
 			int high = atoi(argv[5]);
 			int mid = (low + high) / 2;
@@ -339,7 +339,7 @@ int _tmain(int argc, LPTSTR argv[])
 			int tempMid = mid;
 			for (int i = 0; i < 2; i++)
 			{
-				sprintf(commandLine, _T("FileInsertionSort %d %d %d %d %d"), processes, hSource, hDest, tempLow, tempMid);
+				sprintf(commandLine, _T("FileInsertionSort %d %d %d %d %d"), processes, hDest, hSource, tempLow, tempMid);
 				
 				if (!CreateProcess(NULL, commandLine, NULL, NULL,
 					TRUE, 0, NULL, NULL, &startUpSearch, &processInfo))
@@ -352,22 +352,15 @@ int _tmain(int argc, LPTSTR argv[])
 			}
 			WaitForSingleObject(hProc[0], INFINITE);
 			WaitForSingleObject(hProc[1], INFINITE);
-			mergeTwoFiles(pSource, pDest, low, mid, high);
+			mergeTwoFiles(pDest, pSource, low, mid, high);
 			UnmapViewOfFile(pSource);
 			UnmapViewOfFile(pDest);
-			CloseHandle(hOut);
+			CloseHandle(hSource);
 			CloseHandle(fOut);
 			CloseHandle(hDest);
 			free(hProc);
 
-			if (!DeleteFile("tempfile.txt"))
-			{
-				int e = GetLastError();
-				if (e == ERROR_ACCESS_DENIED)
-				{
-					printf("Did not delete");
-				}
-			}
+			
 		}
 	}
 
